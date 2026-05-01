@@ -1,0 +1,70 @@
+@use '../abstracts';
+
+.main-content-header {
+    width: min(81.3333%, 28.01875em);
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    padding-block-end: clamp(2em, 2.5vw, 4em);
+    text-align: center;
+    gap: clamp(1.5em, 2.5vw, 2em);
+
+    > * {margin: 0;}
+    
+    &__title {@include abstracts.font-style(abstracts.$font-size-h1, 900, abstracts.$hsl-slate-900);}
+
+    &__description {@include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-slate-600);}
+
+    &__btn-wrapper {
+        display: inherit;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    &__button {
+        &--primary {@include abstracts.button(abstracts.$purple-palete, true);}
+        &--secondary {@include abstracts.button(abstracts.$cyan-palete);}
+    }    
+}
+
+.site-first-section {
+    width: min(82.94%, 70em);
+    margin-inline: auto;
+    margin-block-start: clamp(2em, 2.5vw, 3.5em);
+    padding-block: 5em clamp(4em, 5vw, 4.5em);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+    // position: relative;
+
+    &__number-section {
+        align-self: center;
+        @include abstracts.number-desing;
+    }
+
+    &__image {
+        max-width: 100%;
+        border-radius: .5em;
+    }
+
+    &__hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em; 
+    }
+    &__subtitle {
+        @include abstracts.font-style(abstracts.$font-size-subtitle, 900, abstracts.$hsl-cyan-600);
+        text-transform: uppercase;
+        margin-block: 0 .875em;
+    }
+    &__title {
+        @include abstracts.font-style(abstracts.$font-size-h2, 900, abstracts.$hsl-slate-900);
+        margin-block: 0 .84em;
+    }
+    &__description {
+        @include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-slate-600);
+        margin-block-end: 0;
+    }
+}

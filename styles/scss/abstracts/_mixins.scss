@@ -1,0 +1,59 @@
+@use 'sass:map';
+@use './colors';
+@use './fonts';
+
+@mixin font-style($font-size, $font-weight, $font-color) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $font-color;
+}
+
+@mixin button ($palete-color, $is-primary: false){
+
+    // Font rules:
+    font-size: 1rem;
+    font-weight: 900;
+    color: map.get($palete-color, "white");
+
+    // Box rules:
+    background-color: map.get($palete-color, "primary");
+    padding: 1em 2.5em;
+    border-radius: 1.8125em;
+    border: none;
+
+    @if $is-primary {
+        span {
+            color: map.get($palete-color, "secondary");
+        }
+    }
+}
+
+@mixin number-desing ($is-final-section: false) {
+    color: colors.$hsl-slate-600;
+    font-weight: 900;
+    background-color: colors.$hsl-white;
+    padding: 1em 1.09375em;
+    border-radius: 50%;
+    border: solid colors.$hsl-slate-300 .0625em;     
+
+    @if $is-final-section {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);   
+    } @else {
+        position: relative;
+    }
+    
+    &::before {
+        display: block;
+        content: '';
+        height: 5em;
+        width: .0625em;
+        background-color: colors.$hsl-slate-300;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+}

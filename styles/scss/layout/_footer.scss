@@ -1,0 +1,35 @@
+@use '../abstracts';
+@use 'sass:color';
+
+.site-second-section {
+    background-image:
+    linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+    url("../../starter-code/assets/mobile/image-footer.jpg");
+    background-size: cover;
+    margin-block-start: 6.75em;
+    position: relative;
+
+    &__content-wrapper {
+
+        & > * {margin-block: 0;}
+
+        width: min(82.94%, 70em);
+        margin-inline: auto;
+        padding-block: 4em;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+
+    &__number-section {@include abstracts.number-desing(true);}
+
+    &__title {@include abstracts.font-style(abstracts.$font-size-h2, 900, abstracts.$hsl-white);}
+
+    &__description {@include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-white);}
+
+    &__button {
+        @include abstracts.button(abstracts.$purple-palete, true);
+        align-self: center;
+    }
+}

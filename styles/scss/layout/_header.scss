@@ -1,0 +1,16 @@
+.site-header {
+    margin-block-end: clamp(3em, 4vw, 4.5em);
+    text-align: center;
+    
+    &__hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.0625em;
+    }
+    &__image {
+        &--logo {margin-block: clamp(3em, 3vw, 5em) 4em;}
+        &--hero {max-width: 100%;}
+        &--left {justify-self: end;}
+        &--right {justify-self: start;}
+    }
+}
