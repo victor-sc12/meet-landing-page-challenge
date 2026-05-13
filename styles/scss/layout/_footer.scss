@@ -3,11 +3,23 @@
 
 .site-second-section {
     background-image:
-    linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
-    url("../../starter-code/assets/mobile/image-footer.jpg");
+        linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+        url("../../starter-code/assets/mobile/image-footer.jpg");
     background-size: cover;
     margin-block-start: 6.75em;
     position: relative;
+
+    @include abstracts.md-media-rule {
+        background-image:
+            linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+            url("../../starter-code/assets/tablet/image-footer.jpg");
+    }
+
+    @include abstracts.lg-media-rule {
+        background-image:
+            linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+            url("../../starter-code/assets/desktop/image-footer.jpg");
+    }
 
     &__content-wrapper {
 
@@ -20,16 +32,26 @@
         display: flex;
         flex-direction: column;
         gap: 1.5em;
+
+        @include abstracts.lg-media-rule {
+            flex-direction: row;
+            align-items: center;
+            text-align: left;
+        }
     }
 
     &__number-section {@include abstracts.number-desing(true);}
 
     &__title {@include abstracts.font-style(abstracts.$font-size-h2, 900, abstracts.$hsl-white);}
 
-    &__description {@include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-white);}
+    &__description {
+        @include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-white);
+        // @include abstracts.lg-media-rule {flex-basis: 22.1875em;}
+    }
 
     &__button {
         @include abstracts.button(abstracts.$purple-palete, true);
         align-self: center;
+        @include abstracts.lg-media-rule {flex-basis: 16em;}
     }
 }
