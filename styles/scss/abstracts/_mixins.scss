@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use './colors';
 @use './fonts';
+@use './breakpoints';
 
 @mixin font-style($font-size, $font-weight, $font-color) {
     font-size: $font-size;
@@ -56,4 +57,17 @@
         left: 50%;
         transform: translate(-50%, -100%);
     }
+}
+
+@mixin sm-media-rule {
+    @media (min-width: breakpoints.$screen-sm-devices) {@content;}
+}
+@mixin md-media-rule {
+    @media (min-width: breakpoints.$screen-md-devices) {@content;}
+}
+@mixin lg-media-rule {
+    @media (min-width: breakpoints.$screen-lg-devices) {@content;}
+}
+@mixin xl-media-rule {
+    @media (min-width: breakpoints.$screen-xl-devices) {@content;}
 }
