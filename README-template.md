@@ -96,6 +96,10 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 - [How to Install SASS Locally Using NPM](https://dev.to/adetutu/how-to-install-sass-locally-using-node-package-manager-npm-89) - Artículo que habla sobre como instalar y usar el paquete de SASS localmente mediante npm.
 - [Sass Boilerplate](https://github.com/KittyGiraudel/sass-boilerplate.git) - GitHub repository documenting Sass's ‘7-1 architecture pattern,’ which served as the basis for the design of this solution.
+- [CSS At-Rules](https://sass-lang.com/documentation/at-rules/css/) - An article from the Sass website that discusses media queries and other topics. It helped me understand how to use media queries in SCSS.
+- [Breakpoints and media queries in SCSS](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2) - An article on Medium discusses the use of breakpoints and media queries in mixins. It helped me define my media queries in mixins.
+- [Using responsive images in HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images) - Sacar info de los problemas que resulven las imágenes responsivas.
+- [Posicionamiento absoluto](https://lenguajecss.com/css/posicionamiento/position-absolute/) - Página de manz en donde se habla del posicionamiento abstoluto de los elemetos.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
