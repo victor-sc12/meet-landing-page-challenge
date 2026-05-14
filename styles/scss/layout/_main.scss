@@ -1,4 +1,6 @@
 @use '../abstracts';
+@use '../components';
+@use 'sass:map';
 
 .main-content-header {
     padding-block-end: clamp(2em, 2.5vw, 4em);
@@ -48,15 +50,15 @@
     &__description {@include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-slate-600);}
 
     &__btn-wrapper {
-        display: inherit;
+        display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 1em;
     }
 
     &__button {
-        &--primary {@include abstracts.button(abstracts.$purple-palete, true);}
-        &--secondary {@include abstracts.button(abstracts.$cyan-palete);}
+        &--primary {@include components.button(abstracts.$cyan-palete, true);}
+        &--secondary {@include components.button(abstracts.$purple-palete);}
     }    
 }
 
@@ -69,11 +71,10 @@
     display: flex;
     flex-direction: column;
     gap: 4em;
-    // position: relative;
 
     &__number-section {
         align-self: center;
-        @include abstracts.number-desing;
+        @extend %number-design;
     }
 
     &__image {

@@ -1,4 +1,5 @@
 @use '../abstracts';
+@use '../components';
 @use 'sass:color';
 
 .site-second-section {
@@ -40,7 +41,13 @@
         }
     }
 
-    &__number-section {@include abstracts.number-desing(true);}
+    &__number-section {
+        @extend %number-design;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     &__title {@include abstracts.font-style(abstracts.$font-size-h2, 900, abstracts.$hsl-white);}
 
@@ -50,7 +57,7 @@
     }
 
     &__button {
-        @include abstracts.button(abstracts.$purple-palete, true);
+        @include components.button(abstracts.$purple-palete, true);
         align-self: center;
         @include abstracts.lg-media-rule {flex-basis: 16em;}
     }
