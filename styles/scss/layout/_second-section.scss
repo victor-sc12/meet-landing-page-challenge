@@ -1,10 +1,9 @@
 @use '../abstracts';
 @use '../components';
-@use 'sass:color';
 
 .site-second-section {
     background-image:
-        linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+        linear-gradient(abstracts.$hsl-cyan-600-alpha),
         url("../../starter-code/assets/mobile/image-footer.jpg");
     background-size: cover;
     margin-block-start: 6.75em;
@@ -12,13 +11,13 @@
 
     @include abstracts.respond-to('medium') {
         background-image:
-            linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+            linear-gradient(abstracts.$hsl-cyan-600-alpha),
             url("../../starter-code/assets/tablet/image-footer.jpg");
     }
 
     @include abstracts.respond-to('large') {
         background-image:
-            linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
+            linear-gradient(abstracts.$hsl-cyan-600-alpha),
             url("../../starter-code/assets/desktop/image-footer.jpg");
     }
 
@@ -48,11 +47,14 @@
         transform: translate(-50%, -50%);
     }
 
-    &__title {@include abstracts.font-style(abstracts.$font-size-h2, 900, abstracts.$hsl-white);}
+    &__title {
+        @extend %text-h2; 
+        color: abstracts.$hsl-white;
+    }
 
     &__description {
-        @include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-white);
-        // @include abstracts.lg-media-rule {flex-basis: 22.1875em;}
+        @extend %text-paragraph; 
+        color: abstracts.$hsl-white;
     }
 
     &__button {

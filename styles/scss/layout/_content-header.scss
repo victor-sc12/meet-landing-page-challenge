@@ -1,6 +1,5 @@
 @use '../abstracts';
 @use '../components';
-@use 'sass:map';
 
 .main-content-header {
     padding-block-end: clamp(2em, 2.5vw, 4em);
@@ -17,7 +16,6 @@
             background-image: url("../../starter-code/assets/desktop/image-hero-left.png");
             background-repeat: no-repeat;
             background-position: right clamp(0em, 3.5vw, 5.990625em) center;
-            // background-size: contain;
             grid-area: left;
         }
 
@@ -26,7 +24,6 @@
             background-image: url("../../starter-code/assets/desktop/image-hero-right.png");
             background-repeat: no-repeat;
             background-position: left clamp(0em, 3.5vw, 5.990625em) center;  
-            // background-size: contain;
             grid-area: right;
         }
     }
@@ -45,9 +42,15 @@
         }
     }
     
-    &__title {@include abstracts.font-style(abstracts.$font-size-h1, 900, abstracts.$hsl-slate-900);}
+    &__title {
+        @extend %text-h1;
+        color: abstracts.$hsl-slate-900;
+    }
 
-    &__description {@include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-slate-600);}
+    &__description {
+        @extend %text-paragraph;
+        color: abstracts.$hsl-slate-600;
+    }
 
     &__btn-wrapper {
         display: flex;
@@ -60,51 +63,4 @@
         &--primary {@include components.button(abstracts.$cyan-palete, true);}
         &--secondary {@include components.button(abstracts.$purple-palete);}
     }    
-}
-
-.site-first-section {
-    @extend %section-content-container;
-    margin-block-start: clamp(2em, 2.5vw, 3.5em);
-    padding-block: 5em clamp(4em, 5vw, 4.5em);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 4em;
-
-    &__number-section {
-        align-self: center;
-        @extend %number-design;
-    }
-
-    &__image {
-        max-width: 100%;
-        border-radius: .5em;
-    }
-
-    &__hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: clamp(1em, 2.5vw, 2em); 
-
-        @include abstracts.respond-to('medium') {grid-template-columns: repeat(4, 1fr);}
-    }
-
-    &__text-wrapper {
-        width: min(100%, 34em);
-        align-self: center;
-    }
-
-    &__subtitle {
-        @include abstracts.font-style(abstracts.$font-size-subtitle, 900, abstracts.$hsl-cyan-600);
-        text-transform: uppercase;
-        margin-block: 0 .875em;
-    }
-    &__title {
-        @include abstracts.font-style(abstracts.$font-size-h2, 900, abstracts.$hsl-slate-900);
-        margin-block: 0 .84em;
-    }
-    &__description {
-        @include abstracts.font-style(abstracts.$font-size-paragraph, 500, abstracts.$hsl-slate-600);
-        margin-block-end: 0;
-    }
 }

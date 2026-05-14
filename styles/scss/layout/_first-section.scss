@@ -1,0 +1,52 @@
+@use '../abstracts';
+@use '../components';
+
+.site-first-section {
+    @extend %section-content-container;
+    margin-block-start: clamp(2em, 2.5vw, 3.5em);
+    padding-block: 5em clamp(4em, 5vw, 4.5em);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+
+    &__number-section {
+        align-self: center;
+        @extend %number-design;
+    }
+
+    &__image {
+        max-width: 100%;
+        border-radius: .5em;
+    }
+
+    &__hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(1em, 2.5vw, 2em); 
+
+        @include abstracts.respond-to('medium') {grid-template-columns: repeat(4, 1fr);}
+    }
+
+    &__text-wrapper {
+        width: min(100%, 34em);
+        align-self: center;
+    }
+
+    &__subtitle {
+        @extend %text-subtitle;
+        color: abstracts.$hsl-cyan-600;
+        text-transform: uppercase;
+        margin-block: 0 .875em;
+    }
+    &__title {
+        @extend %text-h2;
+        color: abstracts.$hsl-slate-900;
+        margin-block: 0 .84em;
+    }
+    &__description {
+        @extend %text-paragraph;
+        color: abstracts.$hsl-slate-600;
+        margin-block-end: 0;
+    }
+}
