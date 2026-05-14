@@ -1,4 +1,23 @@
+@use './fonts';
+
 %section-content-container {
     width: min(82.94%, 70em);
     margin-inline: auto;
+}
+
+%text-h1 { 
+    font-size: fonts.$font-size-h1;
+    font-weight: 900; 
+}
+%text-h2 { 
+    font-size: fonts.$font-size-h2;
+    font-weight: 900; 
+}
+%text-paragraph { 
+    font-size: fonts.$font-size-paragraph;
+    font-weight:500; 
+}
+%text-subtitle { 
+    font-size: fonts.$font-size-subtitle;
+    font-weight:900; 
 }
