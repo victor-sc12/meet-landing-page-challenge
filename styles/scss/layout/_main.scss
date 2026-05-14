@@ -6,7 +6,7 @@
     padding-block-end: clamp(2em, 2.5vw, 4em);
     text-align: center;
 
-    @include abstracts.lg-media-rule {
+    @include abstracts.respond-to('large') {
         display: grid;
         grid-template-columns: 1fr min(81.3333%, 28.01875em) 1fr;
         grid-template-areas: 'left center right';
@@ -39,7 +39,7 @@
         gap: clamp(1.5em, 2.5vw, 2em);
         > * {margin: 0;}
         
-        @include abstracts.lg-media-rule {
+        @include abstracts.respond-to('large') {
             grid-area: center;
             width: 100%;
         }
@@ -63,8 +63,7 @@
 }
 
 .site-first-section {
-    width: min(82.94%, 70em);
-    margin-inline: auto;
+    @extend %section-content-container;
     margin-block-start: clamp(2em, 2.5vw, 3.5em);
     padding-block: 5em clamp(4em, 5vw, 4.5em);
     text-align: center;
@@ -87,7 +86,7 @@
         grid-template-columns: 1fr 1fr;
         gap: clamp(1em, 2.5vw, 2em); 
 
-        @include abstracts.md-media-rule {grid-template-columns: repeat(4, 1fr);}
+        @include abstracts.respond-to('medium') {grid-template-columns: repeat(4, 1fr);}
     }
 
     &__text-wrapper {

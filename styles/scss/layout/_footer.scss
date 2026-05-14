@@ -10,13 +10,13 @@
     margin-block-start: 6.75em;
     position: relative;
 
-    @include abstracts.md-media-rule {
+    @include abstracts.respond-to('medium') {
         background-image:
             linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
             url("../../starter-code/assets/tablet/image-footer.jpg");
     }
 
-    @include abstracts.lg-media-rule {
+    @include abstracts.respond-to('large') {
         background-image:
             linear-gradient(color.change(abstracts.$hsl-cyan-600, $alpha: 0.8)),
             url("../../starter-code/assets/desktop/image-footer.jpg");
@@ -26,15 +26,14 @@
 
         & > * {margin-block: 0;}
 
-        width: min(82.94%, 70em);
-        margin-inline: auto;
+        @extend %section-content-container;
         padding-block: 4em;
         text-align: center;
         display: flex;
         flex-direction: column;
         gap: 1.5em;
 
-        @include abstracts.lg-media-rule {
+        @include abstracts.respond-to('large') {
             flex-direction: row;
             align-items: center;
             text-align: left;
@@ -59,6 +58,6 @@
     &__button {
         @include components.button(abstracts.$purple-palete, true);
         align-self: center;
-        @include abstracts.lg-media-rule {flex-basis: 16em;}
+        @include abstracts.respond-to('large') {flex-basis: 16em;}
     }
 }

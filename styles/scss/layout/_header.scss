@@ -17,7 +17,7 @@
             background-repeat: no-repeat;
             background-size: cover;
             
-            @include abstracts.lg-media-rule {
+            @include abstracts.respond-to('large') {
                 background-image: none;
                 height: 0;
             }
