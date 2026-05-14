@@ -1,0 +1,23 @@
+@use '../abstracts';
+
+%number-design {
+    color: abstracts.$hsl-slate-600;
+    font-weight: 900;
+    background-color: abstracts.$hsl-white;
+    padding: 1em 1.09375em;
+    border-radius: 50%;
+    border: solid abstracts.$hsl-slate-300 .0625em;     
+    position: relative;
+    
+    &::before {
+        display: block;
+        content: '';
+        height: 5em;
+        width: .0625em;
+        background-color: abstracts.$hsl-slate-300;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+    }
+}
