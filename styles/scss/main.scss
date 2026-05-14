@@ -1,4 +1,6 @@
 @use 'base/base';
+// @use 'components/button';  // Just contains placeholder selectors. There's no need to declare it here. 
 @use 'layout/header';
-@use 'layout/main';
-@use 'layout/footer';
+@use 'layout/content-header';
+@use 'layout/first-section';
+@use 'layout/second-section';
