@@ -1,21 +1,31 @@
+@use 'sass:color';
+
 // Color variables:
 $hsl-cyan-600: hsl(192, 37%, 48%);
 $hsl-cyan-300: hsl(192, 90%, 77%);
+$hsl-cyan-hover: hsl(192, 54%, 64%);
+$hsl-cyan-600-alpha: color.change($hsl-cyan-600, $alpha: 0.8); 
+
 $hsl-purple-600: hsl(268, 34%, 53%);
 $hsl-purple-300: hsl(268, 100%, 86%);
+$hsl-purple-hover: hsl(268, 55%, 71%);
+
 $hsl-slate-900: hsl(240, 21%, 20%);
 $hsl-slate-600: hsl(240, 10%, 57%);
 $hsl-slate-300: hsl(240, 18%, 85%);
+
 $hsl-white: hsl(0, 0%, 98%);
 
 $purple-palete: (
     "primary": $hsl-purple-600,
     "secondary": $hsl-purple-300,
+    "tertiary": $hsl-purple-hover,
     "white": $hsl-white
 );
 
 $cyan-palete: (
     "primary": $hsl-cyan-600,
     "secondary": $hsl-cyan-300,
+    "tertiary": $hsl-cyan-hover,
     "white": $hsl-white
 );
