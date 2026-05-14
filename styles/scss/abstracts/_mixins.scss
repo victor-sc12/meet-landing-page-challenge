@@ -1,7 +1,10 @@
 @use 'sass:map';
+@use 'sass:meta';
 @use './colors';
 @use './fonts';
 @use './breakpoints';
+
+// @debug #{meta.inspect(map.get(breakpoints.$breakpoints, "small"))};
 
 @mixin font-style($font-size, $font-weight, $font-color) {
     font-size: $font-size;
@@ -9,15 +12,8 @@
     color: $font-color;
 }
 
-@mixin sm-media-rule {
-    @media (min-width: breakpoints.$screen-sm-devices) {@content;}
-}
-@mixin md-media-rule {
-    @media (min-width: breakpoints.$screen-md-devices) {@content;}
-}
-@mixin lg-media-rule {
-    @media (min-width: breakpoints.$screen-lg-devices) {@content;}
-}
-@mixin xl-media-rule {
-    @media (min-width: breakpoints.$screen-xl-devices) {@content;}
+@mixin respond-to($breakpoint) {
+    @media #{meta.inspect(map.get(breakpoints.$breakpoints, $breakpoint))} {
+      @content;
+    }
 }

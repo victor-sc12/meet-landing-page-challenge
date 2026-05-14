@@ -1,4 +1,6 @@
-$screen-sm-devices: 23.4375em;
-$screen-md-devices: 48em;
-$screen-lg-devices: 62em;
-$screen-xl-devices: 90em;
+$breakpoints: (
+    'small': (min-width: 23.4375em),
+    'medium': (min-width: 48em),
+    'large': (min-width: 62em),
+    'xtralarge': (min-width: 90em)
+);
