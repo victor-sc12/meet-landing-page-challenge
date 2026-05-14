@@ -1,19 +1,8 @@
 @use 'sass:map';
-@use 'sass:meta';
-@use './colors';
-@use './fonts';
 @use './breakpoints';
 
-// @debug #{meta.inspect(map.get(breakpoints.$breakpoints, "small"))};
-
-@mixin font-style($font-size, $font-weight, $font-color) {
-    font-size: $font-size;
-    font-weight: $font-weight;
-    color: $font-color;
-}
-
 @mixin respond-to($breakpoint) {
-    @media #{meta.inspect(map.get(breakpoints.$breakpoints, $breakpoint))} {
+    @media (min-width: map.get(breakpoints.$breakpoints, $breakpoint)) {
       @content;
     }
 }
